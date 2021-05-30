@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: injection
-          image: username/injection:latest
+          image: anticorona/injection:latest
           ports:
             - containerPort: 8080
           readinessProbe:
