@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Date;
 
 @Entity
-@Table(name="Injection_table")
+@Table(name="Injection")
 public class Injection {
 
     @Id
