@@ -17,9 +17,6 @@ spec:
       containers:
         - name: injection
           image: anticorona/injection:latest
-          volumeMounts:
-            - name: volume
-              mountPath: "/mnt/azure"
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -38,6 +35,9 @@ spec:
             timeoutSeconds: 2
             periodSeconds: 5
             failureThreshold: 5
+          volumeMounts:
+            - name: volume
+              mountPath: "/mnt/azure"
       volumes:
       - name: volume
         persistentVolumeClaim:
