@@ -64,6 +64,6 @@ spring:
           contentType: application/json
 logging:
   level:
-    root: 'info'
+    root: info
   file:
-    path: '/mnt/azure/logs'
+    path: /mnt/azure/logs
