@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: injection
-          image: anticorona.azurecr.io//injection:latest
+          image: anticorona.azurecr.io/injection:latest
           ports:
             - containerPort: 8080
           readinessProbe:
