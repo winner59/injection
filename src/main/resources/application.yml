@@ -30,11 +30,6 @@ spring:
         event-out:
           destination: anticorona
           contentType: application/json
-
-logging:
-  level:
-    org.hibernate.type: trace
-    org.springframework.cloud: debug
 server:
   port: 8084
 ---
@@ -65,5 +60,4 @@ spring:
 logging:
   level:
     root: info
-  file:
-    path: /mnt/azure/logs
+  file: /mnt/azure/logs/injection.log

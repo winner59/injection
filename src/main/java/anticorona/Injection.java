@@ -1,6 +1,9 @@
 package anticorona;
 
 import javax.persistence.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import java.util.List;
 import java.util.Date;
@@ -8,6 +11,9 @@ import java.util.Date;
 @Entity
 @Table(name="Injection")
 public class Injection {
+
+    @Transient
+    Logger logger = LoggerFactory.getLogger(Injection.class);
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -19,12 +25,14 @@ public class Injection {
 
     @PreUpdate
     public void onPreUpdate(){
-
+        
+        logger.info("Injection on PreUpdate Executed");
         // 접종 완료 처리 //
         Completed completed = new Completed();
         BeanUtils.copyProperties(this, completed);
         completed.setStatus("INJECTION_COMPLETED");
         completed.publishAfterCommit();      
+
     }
 
 
